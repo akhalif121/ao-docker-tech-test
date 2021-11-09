@@ -1,3 +1,0 @@
-Install the Terraform locally from Hashocorp official website. 
-check Terraform version
-In AWS, create terraform user in IAM service. Add user then Select AWS access type followed by set permission and add user group then review and download the keys.
