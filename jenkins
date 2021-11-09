@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage('Terraform'){
+            steps{
+            sh 'bash ./Jenkins/Scripts/Terraform/install_terraform_dependencies.sh'
+            }
+        }
+        }
+
+
+        stage('Build images'){
+        steps{
+             withCredentials([string(credentialsId: 'DOCKER_USERNAME', variable: 'DOCKER_USERNAME'), string(credentialsId: 'DOCKER_PASSWORD', variable: 'DOCKER_PASSWORD')]) {
+                sh 'bash ./Jenkins/Scripts/Docker/install-docker.sh'
+                sh 'bash ./Jenkins/Scripts/Docker/build_images.sh'
+            }
+        }
+        }
+        stage('Deploy images'){
+        steps{
+            sh "./Jenkins/Scripts/Deploy-app.sh"
+            }
+        }
+        }
+        }
+    }
