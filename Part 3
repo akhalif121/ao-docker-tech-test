@@ -1,7 +1,0 @@
-What has been produced?
-•	Nginx container was created and network with aspnet app.
-•	The local host can access the nginx container and asp. app
-•	AWS infrastructure resources are deployed by Terraform
-•	Please refer the git repository https://github.com/ao-com/ao-docker-tech-test
-Future improvements recommendations
-•	Set up the multilevel pipelines in Teamcity to deploy AWS infrastructure resources and aspnet app container
